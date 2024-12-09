@@ -106,7 +106,9 @@ def main(args: Namespace) -> None:
 
 
 if __name__ == "__main__":
-    parser = ArgumentParser(description="IoChecker -- Provide more context for your IoCs")
+    parser = ArgumentParser(
+        description="IoChecker -- Provide more context for your IoCs"
+    )
     parser.add_argument("ip", help="Specify the IP address to lookup", type=ip_address)
     parser.add_argument(
         "-p",
