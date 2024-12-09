@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "iochecker"
+version = "0.1.0"
+description = "Provide more context to your IoCs"
+authors = ["Hugo Bijmans <hugo.bijmans@tno.nl>", "Maaike van Leuken <maaike.vanleuken@tno.nl>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+censys = "^2.2.6"
+python-dotenv = "^1.0.0"
+shodan = "^1.30.0"
+
+[tool.poetry.dev-dependencies]
+black = "^23.9.1"
+mypy = "^1.5.1"
+pytest = "^7.4.2"
+vulture = "^2.9.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.vulture]
+min_confidence = 100
+paths = ["iochecker"]
+sort_by_size = true

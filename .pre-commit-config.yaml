@@ -1,0 +1,41 @@
+fail_fast: true
+default_stages: [commit]
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+    -   id: check-yaml
+    -   id: check-added-large-files
+    -   id: detect-private-key
+    -   id: check-ast
+    -   id: check-case-conflict
+    -   id: check-json
+    -   id: check-merge-conflict
+    -   id: mixed-line-ending
+    -   id: requirements-txt-fixer
+-   repo: https://github.com/psf/black
+    rev: 24.8.0
+    hooks:
+      - id: black
+        name: black
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.3.3
+    hooks:
+    -   id: python-safety-dependencies-check
+        name: safety
+        files: requirements
+-   repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        name: isort
+        args: ['--profile=black']
+        additional_dependencies: ["toml"]
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.11.2
+    hooks:
+        - id: mypy
+-   repo: https://github.com/jendrikseipp/vulture
+    rev: v2.11
+    hooks:
+      - id: vulture

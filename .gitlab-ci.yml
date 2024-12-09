@@ -1,0 +1,74 @@
+image: python:3.11.0
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  PYLINT_THRESHOLD: 8
+  PYTEST_THRESHOLD: 10
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - .cache/pip
+    - venv/
+
+stages:
+  - security
+  - testing
+  - style
+
+before_script:
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
+  - pip install --upgrade pip && pip install -r requirements.txt
+
+pylint: # Check pylint for code quality
+  stage: style
+  script:
+    - pip install pylint
+    - pylint --fail-under $PYLINT_THRESHOLD iochecker/
+
+black: # Check for PEP8 compliance
+  stage: style
+  script:
+    - pip install black
+    - black --check --diff iochecker/
+
+pur: # Check for outdated dependencies
+  stage: security
+  script:
+    - pip install pur
+    - pur -r requirements.txt -d -z
+  allow_failure: true
+
+safety: # Check for security issues in dependencies
+  stage: security
+  cache: []
+  script:
+    - pip install safety
+    - safety check
+  allow_failure: true
+
+pydocstyle: # Check docstyle comments
+  stage: style
+  script:
+    - pip install pydocstyle
+    - pydocstyle iochecker/
+
+isort: # Check the order and structure of imports
+  stage: style
+  script:
+    - pip install isort
+    - isort iochecker/
+
+mypy: # Test the code with mypy
+  stage: testing
+  script:
+    - pip install mypy
+    - mypy iochecker/ --install-types --non-interactive --ignore-missing-imports --exclude tests/
+
+vulture: # Search for any dead code
+  stage: testing
+  script:
+    - pip install vulture
+    - python -m vulture --min-confidence 100 iochecker/
