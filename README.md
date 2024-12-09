@@ -2,9 +2,9 @@
 <a href="https://gitlab.com/cossas/iochecker/-/tree/master"><img src="iochecker-logo.jpg"/>
 
 [![https://cossas-project.org/portfolio/iochecker/](https://img.shields.io/badge/website-cossas--project.org-orange)](https://cossas-project.org/portfolio/iochecker/)
-[![pipeline status](https://gitlab.com/cossas/iocheker/badges/main/pipeline.svg)](https://gitlab.com/cossas/iocheker/badges/-/commits/main)
+[![pipeline status](https://gitlab.com/cossas/iochecker/badges/main/pipeline.svg)](https://gitlab.com/cossas/iochecker/badges/-/commits/main)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Latest Release](https://gitlab.com/cossas/iocheker/-/badges/release.svg)](https://gitlab.com/cossas/iocheker/-/releases)
+[![Latest Release](https://gitlab.com/cossas/iochecker/-/badges/release.svg)](https://gitlab.com/cossas/iochecker/-/releases)
 </div></a>
 
 <hr style="border:2px solid gray"> </hr>
@@ -13,7 +13,7 @@ Check whether your IoC is still malicious using a dynamic and data-driven method
 </div>
 <hr style="border:2px solid gray"> </hr>
 
-_All COSSAS projects are hosted on [GitLab](https://gitlab.com/cossas/iocheker/) with a push mirror to GitHub. For issues/contributions check [CONTRIBUTING.md](CONTRIBUTING.md)_ 
+_All COSSAS projects are hosted on [GitLab](https://gitlab.com/cossas/iochecker/) with a push mirror to GitHub. For issues/contributions check [CONTRIBUTING](CONTRIBUTING)_ 
 
 ## What is it?
 IoChecker is a Python command-line tool that ingests a C2 IP address and the date first malicious activity was detected by a CTI provider, returning whether or not the IP address is still under control of an attacker.
