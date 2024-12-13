@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://gitlab.com/cossas/iochecker/-/tree/master"><img src="iochecker-logo.jpg"/>
+<a href="https://gitlab.com/cossas/iochecker/-/tree/main"><img src="https://gitlab.com/cossas/iochecker/-/raw/main/IoChecker.jpg"/>
 
 [![https://cossas-project.org/portfolio/iochecker/](https://img.shields.io/badge/website-cossas--project.org-orange)](https://cossas-project.org/portfolio/iochecker/)
 [![pipeline status](https://gitlab.com/cossas/iochecker/badges/main/pipeline.svg)](https://gitlab.com/cossas/iochecker/badges/-/commits/main)
